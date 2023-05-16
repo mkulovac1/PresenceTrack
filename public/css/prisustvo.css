@@ -1,0 +1,80 @@
+#tabela {
+    border: 1px solid black;
+    border-style: solid;
+    border-collapse: collapse;
+    column-width: 100px;
+}
+
+th, td, tr {
+    border: 1px solid black;
+}
+
+.tabela-prisustvo {
+    overflow: auto;
+    display: block;
+    white-space: nowrap;
+}
+
+table tbody {
+    display: table;
+}
+
+
+.tabela-prisustvo td {
+    font-size: 12px;
+}
+
+.tabela-prisustvo td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.tabela-prisustvo th {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px;
+}
+
+h1 {
+    overflow: hidden;
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+#kolona {
+    width: 300px;
+}
+
+.prisutan {
+    /* background-color: #6fd25a; */
+    background-color: lightgreen;
+}
+
+.odsutan {
+    /* background-color: #ff4d4d; */
+    background-color: lightcoral;
+}
+
+.nije-uneseno {
+    background-color: whitesmoke;
+}
+
+/*.button-prethodna-sedmica {
+    margin-top: 20px;
+    width: 55px;
+    height: 50px;
+    background-image: url(lijevo.png);
+    background-repeat: no-repeat;
+}
+
+.button-sljedeca-sedmica {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 55px;
+    height: 50px;
+    background-image: url(desno.png);
+    background-repeat: no-repeat;
+}*/
+
+

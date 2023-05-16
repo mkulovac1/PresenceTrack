@@ -1,0 +1,544 @@
+[
+    {
+        "studenti": [
+            {
+                "ime": "Mujo Mujic",
+                "index": 12345
+            },
+            {
+                "ime": "Haso Hasic",
+                "index": 12346
+            },
+            {
+                "ime": "Suljo Suljic",
+                "index": 12347
+            },
+            {
+                "ime": "Tasko Taskic",
+                "index": 12348
+            },
+            {
+                "ime": "Meho Mehic",
+                "index": 12349
+            }
+        ],
+        "prisustva": [
+            {
+                "sedmica": 1,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12346
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 0,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12347
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12348
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12349
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 0,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 3,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 0,
+                "vjezbe": 0,
+                "index": 12347
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12348
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 1,
+                "index": 12349
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 2,
+                "vjezbe": 1,
+                "index": 12345
+            }
+        ],
+        "predmet": "RMA",
+        "brojPredavanjaSedmicno": 3,
+        "brojVjezbiSedmicno": 2
+    },
+    {
+        "studenti": [
+            {
+                "ime": "Hasko Haskic",
+                "index": 12345
+            },
+            {
+                "ime": "Drago Dragic",
+                "index": 12346
+            }
+        ],
+        "prisustva": [
+            {
+                "sedmica": 1,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 0,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 0,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 2,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            }
+        ],
+        "predmet": "MLTI",
+        "brojPredavanjaSedmicno": 2,
+        "brojVjezbiSedmicno": 2
+    },
+    {
+        "studenti": [
+            {
+                "ime": "Merim Meric",
+                "index": 12345
+            },
+            {
+                "ime": "Kerim Keric",
+                "index": 12346
+            }
+        ],
+        "prisustva": [
+            {
+                "sedmica": 1,
+                "predavanja": 0,
+                "vjezbe": 3,
+                "index": 12345
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 2,
+                "vjezbe": 3,
+                "index": 12346
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 2,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 3,
+                "index": 12346
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 0,
+                "vjezbe": 3,
+                "index": 12345
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 2,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 2,
+                "vjezbe": 2,
+                "index": 12346
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 2,
+                "index": 12345
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 1,
+                "index": 12346
+            }
+        ],
+        "predmet": "WT",
+        "brojPredavanjaSedmicno": 2,
+        "brojVjezbiSedmicno": 3
+    },
+    {
+        "studenti": [
+            {
+                "ime": "Damir Damic",
+                "index": 12345
+            },
+            {
+                "ime": "Petar Petko",
+                "index": 12346
+            }
+        ],
+        "prisustva": [
+            {
+                "sedmica": 1,
+                "predavanja": 1,
+                "vjezbe": 1,
+                "index": 12345
+            },
+            {
+                "sedmica": 1,
+                "predavanja": 0,
+                "vjezbe": 0,
+                "index": 12346
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 2,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 1,
+                "vjezbe": 1,
+                "index": 12345
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 4,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12346
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": 12345
+            },
+            {
+                "sedmica": 5,
+                "predavanja": 1,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": 12346
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12345
+            },
+            {
+                "sedmica": 7,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": 12346
+            }
+        ],
+        "predmet": "VVS",
+        "brojPredavanjaSedmicno": 1,
+        "brojVjezbiSedmicno": 1
+    }
+]

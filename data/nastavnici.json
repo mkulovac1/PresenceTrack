@@ -1,0 +1,22 @@
+[
+    {
+        "nastavnik": {
+            "username": "mera_meric",
+            "password_hash": "$2a$10$1yIGD4eC2ePWrGkWydZCdeS6rxciW3aMMBL3jP96d7hCsKAlL0SOe"
+        },
+        "predmeti": [
+            "RMA",
+            "MLTI",
+            "WT"
+        ]
+    },
+    {
+        "nastavnik": {
+            "username": "nera_neric",
+            "password_hash": "$2a$10$xs5lmOqP84sKfTCWwEkev.ia4JD7ISk1FJglKkrghBuR0gXMfcoxC"
+        },
+        "predmeti": [
+            "VVS"
+        ]
+    }
+]
