@@ -12,7 +12,7 @@ const PoziviAjax = (()=>{
             else if(xtr.readyState == 4)
                 fnCallback(false, null)
         }
-        xtr.open("GET", "predmet/" + naziv, true)
+        xtr.open("GET", "subject/" + naziv, true)
         xtr.send()
     }
 
@@ -25,7 +25,7 @@ const PoziviAjax = (()=>{
             else if(xtr.readyState == 4)
                 fnCallback(false, null)
         }
-        xtr.open("GET", "predmeti", true) //
+        xtr.open("GET", "subjects", true) //
         xtr.send()
     }
 
@@ -63,7 +63,7 @@ const PoziviAjax = (()=>{
             else if(xtr.readyState == 4)
                 fnCallback(false, null)
         }
-        xtr.open("POST", "/prisustvo/predmet/" + naziv + "/student/" + index, true)
+        xtr.open("POST", "/presence/subject/" + naziv + "/student/" + index, true)
         xtr.setRequestHeader("Content-Type", "application/json;charset=UTF-8") // 
         xtr.send(JSON.stringify(prisustvo))
     }

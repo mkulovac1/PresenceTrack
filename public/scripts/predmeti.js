@@ -9,14 +9,6 @@ window.onload = function() {
     };
 }
 
-/*let logoutOnClick = function() {
-    PoziviAjax.postLogout(function (status, data){
-        if(status)
-            window.location.replace("prijava.html");
-        else
-            alert("Neuspješan logout!");
-    })
-}*/
 
 let meniDiv = document.getElementById("meniDiv")
 
@@ -32,10 +24,10 @@ window.promjeniPrisustvoOnClick = promjeniPrisustvoOnClick;
 
 function promjeniPrisustvoOnClick() {
     // f-ja, metoda koja omogucava nastavniku da klikom na celiju na raspakovanoj sedmici mijenja prisustvo studenta 
-    document.querySelectorAll('.predavanja, .vjezbe').forEach(function(podatak) {
-        podatak.onclick = function() {
-            PoziviAjax.postPrisustvo(podatak.dataset.predmetIme, podatak.dataset.studentIndex, {"sedmica": podatak.dataset.studentSedmica,"predavanja": podatak.dataset.studentPredavanja,"vjezbe": podatak.dataset.studentVjezbe}, function(status, data) {
-                // console.log(podatak.dataset.predmetIme + " " + podatak.dataset.studentIndex + " " + podatak.dataset.studentSedmica + " " + podatak.dataset.studentPredavanja + " " + podatak.dataset.studentVjezbe)
+    document.querySelectorAll('.predavanja, .vjezbe').forEach(function(givenData) {
+        givenData.onclick = function() {
+            PoziviAjax.postPrisustvo(givenData.dataset.subjectName, givenData.dataset.studentIndex, {"week": givenData.dataset.studentWeek,"lectures": givenData.dataset.studentLectures,"labs": givenData.dataset.studentLabs}, function(status, data) {
+                console.log(givenData.dataset.subjectName + " " + givenData.dataset.studentIndex + " " + givenData.dataset.studentWeek + " " + givenData.dataset.studentLectures + " " + givenData.dataset.studentLabs)
                 if(status) {
                     prikaziTabeluNastavniku(data)
                 }
@@ -50,8 +42,8 @@ function promjeniPrisustvoOnClick() {
 
 function postaviOnClickPredmete() { 
     // f-ja, metoda koja omogucava da se iscrta tabela za kliknuti predmet, .predmet se nalazi u predmeti.html
-    document.querySelectorAll('.predmet').forEach(function(podatak) {
-        podatak.onclick = function() {
+    document.querySelectorAll('.predmet').forEach(function(givenData) {
+        givenData.onclick = function() {
             PoziviAjax.getPredmet(this.text, function(status, data) {
                 if(status) {
                     prikaziTabeluNastavniku(data)

@@ -1,0 +1,544 @@
+[
+    {
+        "students": [
+            {
+                "name": "Mujo Mujic",
+                "index": 12345
+            },
+            {
+                "name": "Haso Hasic",
+                "index": 12346
+            },
+            {
+                "name": "Suljo Suljic",
+                "index": 12347
+            },
+            {
+                "name": "Tasko Taskic",
+                "index": 12348
+            },
+            {
+                "name": "Meho Mehic",
+                "index": 12349
+            }
+        ],
+        "presences": [
+            {
+                "week": 1,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12346
+            },
+            {
+                "week": 1,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 1,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 1,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 2,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 2,
+                "lectures": 0,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 2,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 2,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 2,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 3,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 3,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 3,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 3,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 3,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 4,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 4,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 4,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 4,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 4,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 5,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 5,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 5,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 5,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 5,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 6,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 6,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 6,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12347
+            },
+            {
+                "week": 6,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12348
+            },
+            {
+                "week": 6,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12349
+            },
+            {
+                "week": 7,
+                "lectures": 0,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 7,
+                "lectures": 3,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12347
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12348
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 1,
+                "index": 12349
+            },
+            {
+                "week": 1,
+                "lectures": 2,
+                "labs": 1,
+                "index": 12345
+            }
+        ],
+        "subject": "RMA",
+        "numberOfLecturesPerWeek": 3,
+        "numberOfLabsPerWeek": 2
+    },
+    {
+        "students": [
+            {
+                "name": "Hasko Haskic",
+                "index": 12345
+            },
+            {
+                "name": "Drago Dragic",
+                "index": 12346
+            }
+        ],
+        "presences": [
+            {
+                "week": 1,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 1,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 2,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 2,
+                "lectures": 0,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 3,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 3,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 5,
+                "lectures": 0,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 5,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 6,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 6,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 7,
+                "lectures": 2,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 7,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            }
+        ],
+        "subject": "MLTI",
+        "numberOfLecturesPerWeek": 2,
+        "numberOfLabsPerWeek": 2
+    },
+    {
+        "students": [
+            {
+                "name": "Merim Meric",
+                "index": 12345
+            },
+            {
+                "name": "Kerim Keric",
+                "index": 12346
+            }
+        ],
+        "presences": [
+            {
+                "week": 1,
+                "lectures": 0,
+                "labs": 3,
+                "index": 12345
+            },
+            {
+                "week": 1,
+                "lectures": 2,
+                "labs": 3,
+                "index": 12346
+            },
+            {
+                "week": 2,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 2,
+                "lectures": 0,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 3,
+                "lectures": 2,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 3,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 3,
+                "index": 12346
+            },
+            {
+                "week": 5,
+                "lectures": 0,
+                "labs": 3,
+                "index": 12345
+            },
+            {
+                "week": 5,
+                "lectures": 2,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 6,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 6,
+                "lectures": 2,
+                "labs": 2,
+                "index": 12346
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 2,
+                "index": 12345
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 1,
+                "index": 12346
+            }
+        ],
+        "subject": "WT",
+        "numberOfLecturesPerWeek": 2,
+        "numberOfLabsPerWeek": 3
+    },
+    {
+        "students": [
+            {
+                "name": "Damir Damic",
+                "index": 12345
+            },
+            {
+                "name": "Petar Petko",
+                "index": 12346
+            }
+        ],
+        "presences": [
+            {
+                "week": 1,
+                "lectures": 1,
+                "labs": 1,
+                "index": 12345
+            },
+            {
+                "week": 1,
+                "lectures": 0,
+                "labs": 0,
+                "index": 12346
+            },
+            {
+                "week": 2,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 2,
+                "lectures": 0,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 3,
+                "lectures": 1,
+                "labs": 1,
+                "index": 12345
+            },
+            {
+                "week": 3,
+                "lectures": 0,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 4,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12346
+            },
+            {
+                "week": 5,
+                "lectures": 0,
+                "labs": 1,
+                "index": 12345
+            },
+            {
+                "week": 5,
+                "lectures": 1,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 6,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 6,
+                "lectures": 0,
+                "labs": 1,
+                "index": 12346
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12345
+            },
+            {
+                "week": 7,
+                "lectures": 1,
+                "labs": 0,
+                "index": 12346
+            }
+        ],
+        "subject": "VVS",
+        "numberOfLecturesPerWeek": 1,
+        "numberOfLabsPerWeek": 1
+    }
+]

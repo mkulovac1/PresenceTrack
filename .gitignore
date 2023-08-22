@@ -1,0 +1,38 @@
+# Ignore node modules
+node_modules/
+
+# Ignore temporary files
+*.tmp
+*.log
+*.pid
+*.lock
+
+# Ignore npm-debug.log and yarn-debug.log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore .env files containing sensitive information
+.env
+
+# Ignore .DS_Store files on macOS
+.DS_Store
+
+# Ignore Thumbs.db files on Windows
+Thumbs.db
+
+# Ignore .idea directory for JetBrains IDEs
+.idea/
+
+# Ignore .vscode directory for Visual Studio Code
+.vscode/
+
+# Ignore .cache directory for cache files
+.cache/
+
+# Ignore jest snapshot files
+__snapshots__/
+
+# Ignore yarn-error.log file
+yarn-error.log
+
