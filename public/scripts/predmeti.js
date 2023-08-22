@@ -4,7 +4,7 @@ window.onload = function() {
             if(status)
                 window.location.replace("prijava.html")
             else
-                alert("Neuspješan logout!")
+                alert("Unsuccessful logout!")
         })
     };
 }
@@ -12,27 +12,27 @@ window.onload = function() {
 
 let meniDiv = document.getElementById("meniDiv")
 
-function prikaziTabeluNastavniku(data) {
-    let prisustvo = TabelaPrisustvo(document.getElementById("divSadrzaj"), data)
-    if(prisustvo) {
-        window.sljedecaSedmica = prisustvo.sljedecaSedmica
-        window.prethodnaSedmica = prisustvo.prethodnaSedmica
+function showTableToProfessor(data) {
+    let presence = TabelaPrisustvo(document.getElementById("divSadrzaj"), data)
+    if(presence) {
+        window.nextWeek = presence.nextWeek
+        window.previousWeek = presence.previousWeek
     }
 }
 
-window.promjeniPrisustvoOnClick = promjeniPrisustvoOnClick;
+window.changePresenceOnClick = changePresenceOnClick;
 
-function promjeniPrisustvoOnClick() {
+function changePresenceOnClick() {
     // f-ja, metoda koja omogucava nastavniku da klikom na celiju na raspakovanoj sedmici mijenja prisustvo studenta 
     document.querySelectorAll('.predavanja, .vjezbe').forEach(function(givenData) {
         givenData.onclick = function() {
             AjaxCalls.postPresence(givenData.dataset.subjectName, givenData.dataset.studentIndex, {"week": givenData.dataset.studentWeek,"lectures": givenData.dataset.studentLectures,"labs": givenData.dataset.studentLabs}, function(status, data) {
                 console.log(givenData.dataset.subjectName + " " + givenData.dataset.studentIndex + " " + givenData.dataset.studentWeek + " " + givenData.dataset.studentLectures + " " + givenData.dataset.studentLabs)
                 if(status) {
-                    prikaziTabeluNastavniku(data)
+                    showTableToProfessor(data)
                 }
                 else {
-                    alert("Podaci o prisustvu se ne mogu azurirati!")
+                    alert("Data about presence for subject are not successfully updated!")
                 }
             })
         }
@@ -40,16 +40,16 @@ function promjeniPrisustvoOnClick() {
 }
 
 
-function postaviOnClickPredmete() { 
+function setSubjectsOnClick() { 
     // f-ja, metoda koja omogucava da se iscrta tabela za kliknuti predmet, .predmet se nalazi u predmeti.html
     document.querySelectorAll('.predmet').forEach(function(givenData) {
         givenData.onclick = function() {
             AjaxCalls.getSubject(this.text, function(status, data) {
                 if(status) {
-                    prikaziTabeluNastavniku(data)
+                    showTableToProfessor(data)
                 }
                 else {
-                    alert("Podaci o prisustvu za predmet nisu uspjesno preuzeti!")
+                    alert("Data about presence for subject are not successfully downloaded!")
                 }
             })
         }
@@ -63,9 +63,9 @@ AjaxCalls.getSubjects(function(status, data) {
         for(let i = 0; i < data.length; i++) {
             meniDiv.innerHTML += '<a href="#" class="predmet">' + data[i] + '</a>' // stavljamo nazive predmeta u meni horizontalno (ovo je opcionalno, moglo bi biti i vertiklano ispod jedno drugog)
         }
-        postaviOnClickPredmete() // ovim je omoguceno da se klikom na naziv predmeta (href) prikaze tabela za taj predmet
+        setSubjectsOnClick() // ovim je omoguceno da se klikom na naziv predmeta (href) prikaze tabela za taj predmet
     }
     else {
-        alert("Podaci preuzeti sa servera nisu u validnom obliku!")
+        alert("Data from server are not in correct format!")
     }
 })

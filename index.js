@@ -5,34 +5,34 @@ const app = express() // kreiranje app
 const bcrypt = require('bcrypt') // za hash
 const session = require('express-session')
 
-function azurirajPrisustvaZaPS(subject, index, { week, lectures, labs }) { // P - predmet, S - student
+function updatePresence(subject, index, { week, lectures, labs }) { // P - predmet, S - student
     // PRIMJENA RASPAKIVANJA NAD TRECIM ELEMENTOM U ZAGLAVLJU METODE, ovo je ustvari req.body, ali zbog lakseg razumijevanja koristeno je raspakivanje
-    let prisustvaZaPredmet = JSON.parse(fs.readFileSync('data/presences.json')).find(podatak => podatak["subject"] == subject)
+    let presenceForSubject = JSON.parse(fs.readFileSync('data/presences.json')).find(dataPresence => dataPresence["subject"] == subject)
 
-    // console.log("Prije:\n" + prisustvaZaPredmet)
+    // console.log("Prije:\n" + presenceForSubject)
     
-    let postojiSedmica = false;
-    for(let i = 0; i < prisustvaZaPredmet["presences"].length; i++) {
-        if(prisustvaZaPredmet["presences"][i]["index"] == index && prisustvaZaPredmet["presences"][i]["week"] == week) {
-            prisustvaZaPredmet["presences"][i]["lectures"] = Number(lectures)
-            prisustvaZaPredmet["presences"][i]["labs"] = Number(labs)
-            postojiSedmica = true;
+    let weekExists = false;
+    for(let i = 0; i < presenceForSubject["presences"].length; i++) {
+        if(presenceForSubject["presences"][i]["index"] == index && presenceForSubject["presences"][i]["week"] == week) {
+            presenceForSubject["presences"][i]["lectures"] = Number(lectures)
+            presenceForSubject["presences"][i]["labs"] = Number(labs)
+            weekExists = true;
         }
     } // lakse ovdje for nego foreach
 
-    // console.log(postojiSedmica)
+    // console.log(weekExists)
 
-    if(!postojiSedmica) // ovo se koristi ukoliko prisustvo nije upisano za studenta za odredjenu sedmicu
-        prisustvaZaPredmet["presences"].push({"week":Number(week), "lectures":Number(lectures), "labs":Number(labs), "index":Number(index)})
+    if(!weekExists) // ovo se koristi ukoliko prisustvo nije upisano za studenta za odredjenu sedmicu
+        presenceForSubject["presences"].push({"week":Number(week), "lectures":Number(lectures), "labs":Number(labs), "index":Number(index)})
 
-    // console.log("Poslije:\n" + prisustvaZaPredmet)
+    // console.log("Poslije:\n" + presenceForSubject)
 
     const buffer = fs.readFileSync('data/presences.json')
-    let prisustva = JSON.parse(buffer);
+    let presence = JSON.parse(buffer);
 
-    prisustva[prisustva.findIndex(potrazi => potrazi["subject"] == subject)] = prisustvaZaPredmet // lista se mora azurirati u ukupnom fajlu tj jsonu
-    fs.writeFileSync('data/presences.json', JSON.stringify(prisustva, null, 4)) // json se mora azurirati
-    return prisustvaZaPredmet
+    presence[presence.findIndex(findSubject => findSubject["subject"] == subject)] = presenceForSubject // lista se mora azurirati u ukupnom fajlu tj jsonu
+    fs.writeFileSync('data/presences.json', JSON.stringify(presence, null, 4)) // json se mora azurirati
+    return presenceForSubject
 }
 
 // PUTANJA: http://localhost:3000/nazivStranice.html
@@ -53,15 +53,15 @@ app.use(express.json()) // middleware f-ja koja se koristi za lakse manipulisanj
 app.post('/login', function(req, res) {
     let login = req.body; // u obliku {"username": username, "password": password}
     
-    let nastavnici = JSON.parse(fs.readFileSync('data/professors.json'))
-    for(let i = 0; i < nastavnici.length; i++) {
-        if(nastavnici[i]["professor"]["username"] == login["username"]
-        && bcrypt.compareSync(login["password"], nastavnici[i]["professor"]["password_hash"])) {
+    let professors = JSON.parse(fs.readFileSync('data/professors.json'))
+    for(let i = 0; i < professors.length; i++) {
+        if(professors[i]["professor"]["username"] == login["username"]
+        && bcrypt.compareSync(login["password"], professors[i]["professor"]["password_hash"])) {
             // ukoliko su podaci validni, kreira se sesija i nastavniku se prikazuje stranica predmeti.html
             req.session.data = Object() // kreiranje objekta sesije
             req.session.data["logged"] = true
             req.session.data["username"] = login["username"]
-            req.session.data["subjects"] = nastavnici[i]["subjects"]
+            req.session.data["subjects"] = professors[i]["subjects"]
         }
     }
 
@@ -92,7 +92,7 @@ app.get('/subjects', function(req, res) { //
 })
 app.get('/subject/:name', function(req, res) {
     if(req.session.data && req.session.data["logged"] && req.session.data.subjects.includes(req.params.name)) {
-        res.send(JSON.stringify(JSON.parse(fs.readFileSync('data/presences.json')).find(podatak => podatak["subject"] == req.params.name)))
+        res.send(JSON.stringify(JSON.parse(fs.readFileSync('data/presences.json')).find(dataPresence => dataPresence["subject"] == req.params.name)))
     }
     else {
         res.status(403).send() // 403 - forbidden
@@ -102,7 +102,7 @@ app.get('/subject/:name', function(req, res) {
 //subjects I PRISUSTVO:
 app.post('/presence/subject/:name/student/:index', function(req, res) {
     if(req.session.data && req.session.data["logged"] && req.session.data.subjects.includes(req.params.name)) {
-        res.send(azurirajPrisustvaZaPS(req.params.name, req.params.index, req.body));
+        res.send(updatePresence(req.params.name, req.params.index, req.body));
     }
     else {
         res.status(403).end()

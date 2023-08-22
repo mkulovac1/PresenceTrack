@@ -79,8 +79,8 @@
             },
             {
                 "week": 3,
-                "lectures": 3,
-                "labs": 2,
+                "lectures": 0,
+                "labs": 1,
                 "index": 12345
             },
             {
@@ -199,7 +199,7 @@
             },
             {
                 "week": 7,
-                "lectures": 1,
+                "lectures": 0,
                 "labs": 0,
                 "index": 12345
             },
