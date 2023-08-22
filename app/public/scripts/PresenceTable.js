@@ -1,5 +1,4 @@
-let TabelaPrisustvo = function (divRef, givenData) {
-    //privatni atributi modula
+let PresenceTable = function (divRef, givenData) {
     
     if(divRef == null || givenData == null) 
         return null;
@@ -31,7 +30,6 @@ let TabelaPrisustvo = function (divRef, givenData) {
         }
     }
 
-    // potrebno je naći početni redni number sedmice i krajni redni number sedmice jer prisustvo ne mora početi od 1. sedmice ?!
     let min = Math.min(...givenData["presences"].map(item => item.week));
     let max = Math.max(...givenData["presences"].map(item => item.week));
 
@@ -62,7 +60,6 @@ let TabelaPrisustvo = function (divRef, givenData) {
         studentExists = false;
     
 
-    // uslov 6 iz postavke spirale: Postoji sedmica, između dvije sedmice za koje je uneseno prisustvo bar jednom studentu, u kojoj nema unesenog prisustva. Npr. uneseno je prisustvo za sedmice 1 i 3 ali nijedan student nema prisustvo za sedmicu 2
     const weeksForCondition = new Set([]);
     for(let i = 0; i < givenData["presences"].length; i++) {
         weeksForCondition.add(givenData["presences"][i]["week"]);
@@ -81,14 +78,13 @@ let TabelaPrisustvo = function (divRef, givenData) {
     }
 
 
-    // ako neki uslov nije ispunjen:
     if(!successfulValidation || !studentExists) {
-        divRef.innerHTML = "givenData o prisustvu nisu validni!"
+        divRef.innerHTML = "Data about presence are not valid!"
         return null;
     }
 
 
-    // potrebno je redne numbereve sedmica pretvoriti u RIMSKE numberEVE (za to ćemo koristiti funkciju jer postoji više sedmica):
+    
     function convertInRomanNumber(number) {
         var acronyms = {M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1}, romanNumber = '';
         for ( var i in acronyms) {
@@ -108,9 +104,7 @@ let TabelaPrisustvo = function (divRef, givenData) {
     }
 
 
-    // bolje je napisati posebnu funkciju za ispis tabele jer će koristiti button za prethodnu i sljedeću sedmicu odnosno potrebno je omogućiti detaljan prikaz za sedmicu u zavisnosti koja je upitanju:
     function makePresenceTable(currentWeek) {
-        // zastita ukoliko nesto postoji u divu:
         divRef.innerHTML = "";
 
         let newHtmlCode = "";
@@ -156,7 +150,7 @@ let TabelaPrisustvo = function (divRef, givenData) {
                             newHtmlCode += '<td>V<br>' + (k + 1) + '</td>';
                     }
                     else if(j != 0 && !studentWeeks.includes(j)) {
-                        newHtmlCode += '<td rowspan="2">Nije <br> uneseno</td>';
+                        newHtmlCode += '<td rowspan="2">Not <br> entered</td>';
                     }
                     else {
                         let percentageForWeek = Math.round(((presenceWeekForStudent[getCurrentWeekIndex(j, presenceWeekForStudent)]["lectures"] + presenceWeekForStudent[getCurrentWeekIndex(j, presenceWeekForStudent)]["labs"]) / (givenData["numberOfLecturesPerWeek"] + givenData["numberOfLabsPerWeek"])) * 100);
@@ -165,11 +159,8 @@ let TabelaPrisustvo = function (divRef, givenData) {
                 }
                 
 
-            // kolone koje nisu prisutne trebaju se dodati i trebaju biti prazne:
             newHtmlCode += '<td rowspan="2"></td> <tr class="red">';
             
-
-            // stilizacija trenutneSedmice: Prvo popunite prisustvo (onoliko kvadrata koliko ima casova na kojima je student prisustvovao), a preostale kvadrate (ako ih ima) popunite kao odsustvo (piazza)
             for(let j = 1; j <= max; j++) {
                 if(j == currentWeek && !notEnteredWeekForStudenta) {
                     for(let l = 0; l < givenData["numberOfLecturesPerWeek"]; l++) {
@@ -178,15 +169,14 @@ let TabelaPrisustvo = function (divRef, givenData) {
                         + '" data-student-lectures="' + (Number(presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["lectures"]) - 1) +
                         '" data-student-labs="' + (presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) + '"><br> </td>';
                         
-                        // newHtmlCode += '<td class="predavanja prisutan"> <br> </td>';
+                      
                         else
-                            // newHtmlCode += '<td class="predavanja odsutan"> <br> </td>';
+                            
                             newHtmlCode += '<td class="predavanja odsutan" data-subject-name="' + givenData["subject"] + '" data-student-index="' + givenData["students"][i]["index"] + '" data-student-week="' + currentWeek
                             + '" data-student-lectures="' + (Number(presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["lectures"]) + 1) +
                             '" data-student-labs="' + (presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) + '"><br> </td>';
 
 
-                            // newHtmlCode += '<td class="predavanja odsutan"> <br> </td>';
                     }
                 }
                 else if(j == currentWeek && notEnteredWeekForStudenta) {
@@ -198,7 +188,7 @@ let TabelaPrisustvo = function (divRef, givenData) {
             for(let j = 1; j <= max; j++) {
                 if(j == currentWeek && !notEnteredWeekForStudenta) {
                     for(let l = 0; l < givenData["numberOfLabsPerWeek"]; l++) {
-                        if(l < presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) // ide currentWeek-1 jer je prva sedmica u sedmicaPrisutvaStudenta na indexu 0!
+                        if(l < presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) 
                             newHtmlCode += '<td class="vjezbe prisutan" data-subject-name="' + givenData["subject"] + '" data-student-index="' + givenData["students"][i]["index"] + '" data-student-week="' + currentWeek
                             + '" data-student-lectures="' + (presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["lectures"]) +
                             '" data-student-labs="' + (Number(presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) - 1) + '"><br> </td>';
@@ -208,14 +198,12 @@ let TabelaPrisustvo = function (divRef, givenData) {
                             + '" data-student-lectures="' + (presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["lectures"]) +
                             '" data-student-labs="' + (Number(presenceWeekForStudent[getCurrentWeekIndex(currentWeek, presenceWeekForStudent)]["labs"]) + 1) + '"><br> </td>';
                             
-                            // newHtmlCode += '<td class="vjezbe odsutan"> <br> </td>';
                     }
                 }
                 else if(j == currentWeek && notEnteredWeekForStudenta) {
                     for(let l = 0; l < givenData["numberOfLabsPerWeek"]; l++)
                         newHtmlCode += '<td class="vjezbe nije-uneseno" data-subject-name="' + givenData["subject"] + '" data-student-index="' + givenData["students"][i]["index"] + '" data-student-week="' + currentWeek + '" data-student-lectures="' + 0 + 
                         '" data-student-labs="' + 1 + '"> <br> </td>';
-                        // newHtmlCode += '<td class="vjezbe nije-uneseno"> <br> </td>';
                 }
             } 
             newHtmlCode += '</tr>';
@@ -223,13 +211,12 @@ let TabelaPrisustvo = function (divRef, givenData) {
 
         newHtmlCode += '</table>'
 
-        // dodavanje button-a:
+
         newHtmlCode += '<button onclick="previousWeek()"> <i class="fa-solid fa-arrow-left" style="font-size:50px;"></i> </button> <button onclick="nextWeek()" style="margin: 10px;"> <i class="fa-solid fa-arrow-right" style="font-size:50px;"></i> </button>';
         divRef.innerHTML = newHtmlCode;
-        changePresenceOnClick() // omogucujemo s ovim izmjenu prisustva
+        changePresenceOnClick() 
     }
 
-    // po defaultu zadnja sedmica treba da bude trenutna odnosno detaljan prikaz za nju pa imamo:
     
     if(!window.currentWeek)
         window.currentWeek = max; //
@@ -237,7 +224,6 @@ let TabelaPrisustvo = function (divRef, givenData) {
     // let currentWeekPrisustva = max;
     makePresenceTable(currentWeek);        
     
-    //implementacija metoda
     let nextWeek = function () {
         if(currentWeek == max)
             return;

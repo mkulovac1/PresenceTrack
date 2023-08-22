@@ -1,8 +1,6 @@
 const AjaxCalls = (()=>{
 
-    // fnCallback u svim metodama se poziva kada stigne odgovor sa servera putem Ajax-a
-    // svaki callback kao parametre ima error i data, error je null ako je status 200 i data je tijelo odgovora
-    // ako postoji greška poruka se prosljeđuje u error parametar callback-a, a data je tada null
+ 
     
     function impl_getSubject(naziv,fnCallback){
         var xtr = new XMLHttpRequest() // ajax  
@@ -16,7 +14,7 @@ const AjaxCalls = (()=>{
         xtr.send()
     }
 
-    // vraća listu predmeta za loginovanog nastavnika ili grešku da nastavnik nije loginovan
+    
     function impl_getSubjects(fnCallback){
         var xtr = new XMLHttpRequest() 
         xtr.onreadystatechange = function() {
@@ -30,7 +28,7 @@ const AjaxCalls = (()=>{
     }
 
     function impl_postLogin(username,password,fnCallback){
-        var xtr = new XMLHttpRequest() // standardna deklaracija za ajax
+        var xtr = new XMLHttpRequest() 
         xtr.onreadystatechange = function() {
             if(xtr.status == 200 && xtr.readyState == 4) // 200: "OK", 4: request finished and response is ready
                 fnCallback(true, JSON.parse(xtr.responseText))
@@ -39,7 +37,7 @@ const AjaxCalls = (()=>{
         }
         xtr.open("POST", "login", true)
         xtr.setRequestHeader("Content-Type", "application/json;charset=UTF-8") // 
-        xtr.send(JSON.stringify({"username":username,"password":password})) // slanje zahtjeva serveru preko ajax-a
+        xtr.send(JSON.stringify({"username":username,"password":password})) 
     }
 
     function impl_postLogout(fnCallback){
@@ -54,7 +52,7 @@ const AjaxCalls = (()=>{
         xtr.send()
     }
 
-    // prisustvo ima oblik {sedmica:N,predavanja:P,vjezbe:V}
+    
     function impl_postPresence(name,index,presence,fnCallback){
         var xtr = new XMLHttpRequest() 
         xtr.onreadystatechange = function() {
