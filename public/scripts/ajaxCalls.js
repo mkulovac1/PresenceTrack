@@ -1,10 +1,10 @@
-const PoziviAjax = (()=>{
+const AjaxCalls = (()=>{
 
     // fnCallback u svim metodama se poziva kada stigne odgovor sa servera putem Ajax-a
     // svaki callback kao parametre ima error i data, error je null ako je status 200 i data je tijelo odgovora
     // ako postoji greška poruka se prosljeđuje u error parametar callback-a, a data je tada null
     
-    function impl_getPredmet(naziv,fnCallback){
+    function impl_getSubject(naziv,fnCallback){
         var xtr = new XMLHttpRequest() // ajax  
         xtr.onreadystatechange = function() {
             if(xtr.status == 200 && xtr.readyState == 4)
@@ -17,7 +17,7 @@ const PoziviAjax = (()=>{
     }
 
     // vraća listu predmeta za loginovanog nastavnika ili grešku da nastavnik nije loginovan
-    function impl_getPredmeti(fnCallback){
+    function impl_getSubjects(fnCallback){
         var xtr = new XMLHttpRequest() 
         xtr.onreadystatechange = function() {
             if(xtr.status == 200 && xtr.readyState == 4)
@@ -55,7 +55,7 @@ const PoziviAjax = (()=>{
     }
 
     // prisustvo ima oblik {sedmica:N,predavanja:P,vjezbe:V}
-    function impl_postPrisustvo(naziv,index,prisustvo,fnCallback){
+    function impl_postPresence(name,index,presence,fnCallback){
         var xtr = new XMLHttpRequest() 
         xtr.onreadystatechange = function() {
             if(xtr.readyState == 4 && xtr.status == 200)
@@ -63,16 +63,16 @@ const PoziviAjax = (()=>{
             else if(xtr.readyState == 4)
                 fnCallback(false, null)
         }
-        xtr.open("POST", "/presence/subject/" + naziv + "/student/" + index, true)
+        xtr.open("POST", "/presence/subject/" + name + "/student/" + index, true)
         xtr.setRequestHeader("Content-Type", "application/json;charset=UTF-8") // 
-        xtr.send(JSON.stringify(prisustvo))
+        xtr.send(JSON.stringify(presence))
     }
 
     return{
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
-        getPredmet: impl_getPredmet,
-        getPredmeti: impl_getPredmeti,
-        postPrisustvo: impl_postPrisustvo
+        getSubject: impl_getSubject,
+        getSubjects: impl_getSubjects,
+        postPresence: impl_postPresence
     };
 })();
