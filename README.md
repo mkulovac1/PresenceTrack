@@ -97,11 +97,15 @@ Here you can see examples of using app.
   <img src="documentation/login-page.png" alt="login-page">
 </a>
 
+<br> <br> <br> <br>
+
 **A page with a list of subjects (courses) that the professor teaches:**
 
 <a href=" ">
   <img src="documentation/professor-page.png" alt="professor-page">
 </a>
+
+<br> <br> <br> <br>
 
 **A Page where the professor can see the attendance of all students in the selected course:**
 
